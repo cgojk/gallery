@@ -7,11 +7,13 @@ export default function Navigation(){
     return (
  <section className="navigation">
    
-       <nav className="navigation container">
+       <nav className="nav container">
         <img src={logo} className="logo-image" loading="lazy" alt="gallery title logo " />
-        <button className="links__startslideshow">
+        <Link to="/description_image" className="links__description">
+        <button  className="links__startslideshow">
            START SLIDESHOW
             </button>
+        </Link>
         
        </nav>
     

@@ -18,7 +18,7 @@ export default function GalleryImages() {
 console.log(data); 
   
        return (
-  <ul className="gallery-images">
+  <div className="gallery__images">
     {data.map((item) => {
       console.log(item);
        console.log(item.images.hero.large); 
@@ -34,6 +34,6 @@ console.log(data);
         />
       );
     })}
-  </ul>
+  </div>
 )
 }
