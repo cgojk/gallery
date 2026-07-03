@@ -15,6 +15,7 @@ export default function GalleryCart(props){
      
 
                <>
+               <section className="links__description">
                <div className="images__gallery--item">
                    
                       <picture className="image-wrapper">
@@ -32,7 +33,7 @@ export default function GalleryCart(props){
                   <h2 className="images__gallery--artist text-5">{artist}</h2>
                 </div>
              </div>
-              
+              </section>
             
             </>
    

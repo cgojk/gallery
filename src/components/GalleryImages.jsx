@@ -17,14 +17,16 @@ export default function GalleryImages() {
 
 console.log(data); 
   
-       return (
+  return (
   <div className="gallery__images">
-    {data.map((item) => {
-      console.log(item);
-       console.log(item.images.hero.large); 
-
-      return (
+    {data.map((item) => (
+      <Link
+          key={item.id}
+          to={`/gallery/${item.id}`}
+          className="links__description"
+        >
         <GalleryCart
+
           key={item.id}
           name={item.name}
           artist={item.artist.name}
@@ -32,8 +34,10 @@ console.log(data);
           imagesmall={item.images.hero.small}
           alt={item.name}
         />
-      );
-    })}
+         </Link>
+      ))};
+
   </div>
-)
-}
+
+  );
+  }
