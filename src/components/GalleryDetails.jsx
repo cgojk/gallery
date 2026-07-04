@@ -2,20 +2,69 @@ import React from 'react';
 import {Link } from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 import data from '../data.json';
+import { useNavigate } from 'react-router-dom';
+
+
+const arrowPrevious = ("/public/assets/shared/icon-back-button.svg");
+
+const arrowNext = ("/public/assets/shared/icon-next-button.svg");
 
 export default function GalleryDetails() {
+    const navigate = useNavigate();
     const params = useParams()
-    console.log(params);
+    console.log(`the params are: ${JSON.stringify(params)}`);
     const {id} = params;
+
+    const currentIndex = data.findIndex(
+     item => item.id === Number(id)
+      );
     
-      const paintingData = data.find(item => item.id === Number(id));
+      const paintingData = data[currentIndex];
       console.log(paintingData);
+
+    //   const [currentPage,setCurrentPage]= React.useState(Number(id))
+    //   console.log(`the id is :${id} is ${currentPage}`);
+      
+const handlePreviousClick = () => {
+    const prevIndex =
+    currentIndex === 0 ? 
+    data.length - 1 : currentIndex - 1;
+
+  const prevId = data[prevIndex].id;
+
+  navigate(`/gallery/${prevId}`);
+};
+
+
+
+
+
+
+const handleNextClick = () => {
+
+  
+  const nextIndex = (currentIndex + 1) % data.length;
+  const nextId = data[nextIndex].id;
+
+  navigate(`/gallery/${nextId}`);
+
+}
+     
+   
+
 
     return (
        
              
         
                        <>
+                        <button className="nav-button left" onClick={handlePreviousClick}>
+                                 <img src={arrowPrevious} alt="Previous" />
+               </button>
+               <button className="nav-button right" onClick={handleNextClick}>
+                  <img src={arrowNext} alt="Next" />
+                </button>
+
                        <div className="image__description--item">
                            
                               <picture className="image__title-thumbnail-wrapper">
