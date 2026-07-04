@@ -138,10 +138,10 @@ button {
   --color-black: hsl(0, 0%, 0%);
   --color-primary: var(--color-black);
   --color-secondary: var(--color-white);
-  --color-grey-100: hsl(0, 0%, 95%);
-  --color-grey-150: hsl(0, 0%, 90%);
-  --color-grey-200: hsl(0, 0%, 85%);
-  --color-grey-400: hsl(0, 0%, 49%);
+  --color-100: hsl(0, 0%, 95%);
+  --color-150: hsl(0, 0%, 90%);
+  --color-200: hsl(0, 0%, 85%);
+  --color-400: hsl(0, 0%, 49%);
   --gradient-primary:
     linear-gradient(
       180deg,
@@ -186,7 +186,7 @@ button {
   --font-5-size: .5625rem;
   --font-5-weight: 700;
   --font-5-line: 1.25;
-  --font-5-spacing: 2px;
+  --font-5-spacing: 2.5px;
   /* Small */
   --font-6-family: var(--font-body);
   --font-6-size: .75rem;
@@ -245,12 +245,6 @@ button {
 /* ==========================================
    FONT
    ========================================== */
-@font-face {
-  font-family: "Libre Baskerville";
-  src: url("../fonts/Libre_Baskerville/LibreBaskerville-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-display: swap;
-}
 .text-1 {
   font-family: var(--font-1-family);
   font-size: var(--font-1-size);
@@ -297,4 +291,110 @@ button {
   font-weight: var(--font-6-weight);
   line-height: var(--font-6-line);
   letter-spacing: var(--font-6-spacing);
+}
+
+/* ==============================================
+            GLOBAL BASE STYLES / HOME PAGE STYLES
+   ==============================================*/
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-body);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-image {
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--space-16) var(--space-12);
+  border-bottom: 1px solid var(--color-400);
+  margin-bottom: var(--space-24);
+  align-items: center;
+}
+
+.links__startslideshow {
+  color: var(--color-400);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.gallery__images {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.images__gallery--item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.images__gallery--item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-white);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+.images__gallery--item:hover::after {
+  opacity: 0.5;
+}
+
+.wrapper__title--artist {
+  position: absolute;
+  bottom: var(--space-24);
+  left: var(--space-24);
+  color: var(--color-100);
+  background-color: hsla(0, 0%, 0%, 0.48);
+  padding: var(--space-8);
+  z-index: 1000;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.image__description--item {
+  overflow: hidden;
+  position: relative;
+}
+
+.images__description {
+  width: 100%;
+  transition: all 0.4s ease;
+  animation: fadeSlide 0.4s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,29 @@
+
+
+.image__description--item{
+    overflow:hidden;
+    position:relative;
+}
+
+
+
+.images__description{
+ 
+
+      width: 100%;
+  transition: all 0.4s ease;
+  animation: fadeSlide 0.4s ease;
+
+
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
