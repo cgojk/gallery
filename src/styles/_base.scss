@@ -6,8 +6,8 @@ body {
     background-color:var(--color-white);
     color: var(--color-black);
     font-family: var(--font-body);
-  
-
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 
@@ -76,15 +76,15 @@ align-items:center;
 
 }
 
-.wrapper__title--artist{
-   position:absolute;
-   bottom:var(--space-24);
-   left:var(--space-24);
-   color:var(--color-100);
-   background-color:hsla(0, 0%, 0%, 0.48);
-   padding:var(--space-8);
-   z-index:1000;
-   }
+// .wrapper__title--artist{
+//    position:absolute;
+//    bottom:var(--space-24);
+//    left:var(--space-24);
+//    color:var(--color-100);
+//    background-color:hsla(0, 0%, 0%, 0.48);
+//    padding:var(--space-8);
+//    z-index:1000;
+//    }
 
 
 // images stylies

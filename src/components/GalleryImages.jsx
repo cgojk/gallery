@@ -8,12 +8,12 @@ import data from "../data.json";
 export default function GalleryImages() {
 
 
-    React.useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}, []);
+//     React.useEffect(() => {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth"
+//   });
+// }, []);
 
 console.log(data); 
   

@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import ImageDescription from "./ImageDescription";
 import GalleryDetails from "./components/GalleryDetails";
 import {AnimatePresence} from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -17,7 +16,6 @@ export default function App() {
         <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/description_image" element={<ImageDescription />} /> */}
           <Route path="/gallery/:id" element={<GalleryDetails />} />
         </Route>
       </Routes>
