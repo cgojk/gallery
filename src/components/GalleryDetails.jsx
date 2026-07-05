@@ -5,8 +5,14 @@ import data from '../data.json';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import BarAnimation from './BarAnimation';
+import ModalImage from './ModalImage';
+
+
+import { useState } from 'react';
+
 
 const arrowPrevious = ("/public/assets/shared/icon-back-button.svg");
+const viewimage = ("/public/assets/shared/icon-view-image.svg");
 
 const arrowNext = ("/public/assets/shared/icon-next-button.svg");
 
@@ -53,8 +59,15 @@ const handleNextClick = () => {
 
 }
      
-   
+const [isModalOpen, setIsModalOpen] = useState(false);  
 
+const openModal = () => {
+    setIsModalOpen(true);
+    
+}
+const closeModal = () => {
+    setIsModalOpen(false);
+}
 
     return (
 
@@ -66,10 +79,10 @@ const handleNextClick = () => {
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
                
-                    <div className="wrapper__content container">
+            <div className="wrapper__content container">
                         {paintingData ? (
                             <>
-                         <div className="image__item ">
+                    <div className="image__item ">
                         
                             <picture className="image__hero-wrapper">
                                 <source media="(max-width: 768px)" srcSet={paintingData?.images?.hero.small} />
@@ -77,8 +90,28 @@ const handleNextClick = () => {
                                 <img
                                 src={paintingData?.images?.hero.large || paintingData?.images?.hero.small}
                                 
-                                className="card__image"/>
+                            className="card__image"/>
                             </picture>
+                            <button
+                               className="view-image-btn"
+                              onClick={openModal}
+                            >
+                              <img
+                              className="view-image-icon"
+                              src={viewimage}
+                              alt="A button to click on and see the image bigger"
+                            className="view-image-icon"
+                            />
+                            <span className="view-image-text text-5">VIEW IMAGE</span>
+                           </button>
+                              
+                            {isModalOpen && (
+                                <ModalImage
+                                  imagelarge={paintingData.images.gallery}
+                                 alt={paintingData.name}
+                                  onClose={closeModal}
+/>
+                                )}
                               <div className="wrapper__title--artist">
                                <h1 className="title text-2">{paintingData?.name}</h1>
                                <h2 className="artist text-5">{paintingData?.artist?.name}</h2>
@@ -86,7 +119,7 @@ const handleNextClick = () => {
                             
                             
                        
-                       </div>
+                 </div>
 
                   
                         
@@ -111,24 +144,19 @@ const handleNextClick = () => {
                         </Link>
                       </button>
 
-                      
-                    
                 </div>
 
                      
-<div className="footer__slide">
-     <BarAnimation progress={progress} />
-                                {/* <div
-
-                                    className="bar__fill"
-                                    style={{ width: `${progress}%` }}
-                                /> */}
-                                </div>
+             <div className="footer__slide">
+            <BarAnimation progress={progress} />
+             </div>
                 
  <div className="wrapper__footer--gallery">
                      <div className="footer__slied-nav">
+                        <div className="wrapper__footer_name--artist">
                           <h1 className="title text-2">{paintingData?.name}</h1>
                           <h2 className="artist text-5">{paintingData?.artist?.name}</h2>
+                        </div>
                         <div className="direction__slides">
                             <button className="nav-button left" onClick={handlePreviousClick}>
                                 <img src={arrowPrevious} alt="Previous" />
@@ -138,11 +166,8 @@ const handleNextClick = () => {
                             </button>
                         </div>
                   </div>
-    </div>
-                   
-
-                     
-                    </motion.div>
+    </div>                
+</motion.div>
            
         
         
