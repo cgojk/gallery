@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom';
 import data from '../data.json';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
+import BarAnimation from './BarAnimation';
 
 const arrowPrevious = ("/public/assets/shared/icon-back-button.svg");
 
@@ -38,16 +39,7 @@ const handlePreviousClick = () => {
   navigate(`/gallery/${prevId}`);
 };
 
-
-
 const progress = ((currentIndex +1) / data.length) * 100;
-
-
-
-
-
-
-
 
 console.log(`the bar progress is: ${progress}`);
 
@@ -122,13 +114,15 @@ const handleNextClick = () => {
                       
                     
                 </div>
-                
-                      
+
+                     
 <div className="footer__slide">
-                                <div
+     <BarAnimation progress={progress} />
+                                {/* <div
+
                                     className="bar__fill"
                                     style={{ width: `${progress}%` }}
-                                />
+                                /> */}
                                 </div>
                 
  <div className="wrapper__footer--gallery">
