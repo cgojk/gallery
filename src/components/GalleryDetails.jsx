@@ -15,6 +15,7 @@ export default function GalleryDetails() {
     const navigate = useNavigate();
     const params = useParams()
     console.log(`the params are: ${JSON.stringify(params)}`);
+    // checking if it works by logging the params to the console. It should show the id of the painting in the URL.
     const {id} = params;
 
     const currentIndex = data.findIndex(
@@ -25,7 +26,6 @@ export default function GalleryDetails() {
       const paintingData = data[currentIndex];
       console.log(paintingData);
 
- 
       
 const handlePreviousClick = () => {
     setDirection(-1);
@@ -40,7 +40,16 @@ const handlePreviousClick = () => {
 
 
 
+const progress = ((currentIndex +1) / data.length) * 100;
 
+
+
+
+
+
+
+
+console.log(`the bar progress is: ${progress}`);
 
 
 const handleNextClick = () => {
@@ -66,6 +75,8 @@ const handleNextClick = () => {
                     >
                
                     <div className="wrapper__content container">
+                        {paintingData ? (
+                            <>
                          <div className="image__item ">
                         
                             <picture className="image__hero-wrapper">
@@ -97,27 +108,43 @@ const handleNextClick = () => {
                         
                           <p className="text">{paintingData?.description}</p>
                         </div>
-                </div>
-                       <button className="button__back">
+                            </>
+                        ):(
+                            <h2>loading...</h2>
+                        )}
+
+                         <button className="button__back">
                         <Link to="/" className="button__back--link text-5">
                         GO TO SOURCE
                         </Link>
                       </button>
 
-                      <div className="footer__slide">
-                        <div className="bar__indicator--slide">
-
-                        </div>
-
-                        <h1 className="title text-2">{paintingData?.name}</h1>
+                      
+                    
+                </div>
+                
+                      
+<div className="footer__slide">
+                                <div
+                                    className="bar__fill"
+                                    style={{ width: `${progress}%` }}
+                                />
+                                </div>
+                
+ <div className="wrapper__footer--gallery">
+                     <div className="footer__slied-nav">
+                          <h1 className="title text-2">{paintingData?.name}</h1>
                           <h2 className="artist text-5">{paintingData?.artist?.name}</h2>
-                       <button className="nav-button left" onClick={handlePreviousClick}>
-                         <img src={arrowPrevious} alt="Previous" />
-                       </button>
-                       <button className="nav-button right" onClick={handleNextClick}>
-                       <img src={arrowNext} alt="Next" />
-                      </button>
-                   </div>
+                        <div className="direction__slides">
+                            <button className="nav-button left" onClick={handlePreviousClick}>
+                                <img src={arrowPrevious} alt="Previous" />
+                            </button>
+                            <button className="nav-button right" onClick={handleNextClick}>
+                                <img src={arrowNext} alt="Next" />
+                            </button>
+                        </div>
+                  </div>
+    </div>
                    
 
                      

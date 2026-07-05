@@ -28,7 +28,7 @@ export default function GalleryCart(props){
     />
                 </picture>
                
-               <div className="wrapper__title--artist">
+               <div className="wrapper__title">
                   <h1 className="images__gallery--title text-2">{name}</h1>
                   <h2 className="images__gallery--artist text-5">{artist}</h2>
                 </div>
