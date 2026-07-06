@@ -126,7 +126,7 @@ const closeModal = () => {
 
                         <div className="description__text">
                              <div className="thumbnail">
-                                <img src={paintingData?.images?.thumbnail} className="image__description--thumbnail" alt="artist thumbnail" />
+                                <img src={paintingData?.artist?.image} className="image__description--thumbnail" alt="artist thumbnail" />
                               </div>
                               <h2 className="image__description--year text-1">{paintingData?.year}</h2>
                      
@@ -138,11 +138,14 @@ const closeModal = () => {
                             <h2>loading...</h2>
                         )}
 
-                         <button className="button__back">
-                        <Link to="/" className="button__back--link text-5">
-                        GO TO SOURCE
-                        </Link>
-                      </button>
+                        
+                        <a href={`${paintingData?.source}`} 
+                                   className="button__source--link text-5"
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                   GO TO SOURCE
+                        </a>
+                   
 
                 </div>
 
