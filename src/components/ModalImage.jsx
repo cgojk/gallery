@@ -3,15 +3,18 @@ import React from "react";
 
 export default function ModalImage({ imagelarge, alt, onClose }) {
   return (
+    <div className="modal__behind">
     <div className="modal__image">
-        <div className="close-modal-btn-container">
+       <div className="container__button">
 				<button className="modal-close-btn" id="modal-close-btn" onClick={onClose}>
 					X
 				</button>
-			</div>
+            </div>
+			
         <picture className="image-wrapper">
             <img src={imagelarge} alt={alt} />
         </picture>
+    </div>
     </div>
   );
 }
