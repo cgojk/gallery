@@ -72,7 +72,7 @@ const closeModal = () => {
     return (
 
      
-                     <motion.div
+                     <motion.div className="gallery-page"
                     initial={{ opacity: 0, x: 50  * direction }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 * direction }}
@@ -147,12 +147,13 @@ const closeModal = () => {
                 </div>
 
                      
-             <div className="footer__slide">
-            <BarAnimation progress={progress} />
-             </div>
+            
                 
  <div className="wrapper__footer--gallery">
-                     <div className="footer__slied-nav">
+     <div className="footer__slide">
+            <BarAnimation progress={progress} />
+             </div>
+                     <div className="footer__slide-nav">
                         <div className="wrapper__footer_name--artist">
                           <h1 className="title text-2">{paintingData?.name}</h1>
                           <h2 className="artist text-5">{paintingData?.artist?.name}</h2>
