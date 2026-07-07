@@ -79,65 +79,59 @@ const closeModal = () => {
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
                
-            <div className="wrapper__content container">
-                        {paintingData ? (
-                            <>
-                    <div className="image__item ">
-                        
-                            <picture className="image__hero-wrapper">
-                                <source media="(max-width: 768px)" srcSet={paintingData?.images?.hero.small} />
-                                <source media="(min-width: 769px)" srcSet={paintingData?.images?.hero.large} />
-                                <img
-                                src={paintingData?.images?.hero.large || paintingData?.images?.hero.small}
-                                
-                            className="card__image"/>
-                            </picture>
-                            <button
-                               className="view-image-btn"
-                              onClick={openModal}
-                            >
-                              <img
-                              className="view-image-icon"
-                              src={viewimage}
-                              alt="A button to click on and see the image bigger"
-                            className="view-image-icon"
-                            />
-                            <span className="view-image-text text-5">VIEW IMAGE</span>
-                           </button>
-                              
-                            {isModalOpen && (
-                                <ModalImage
-                                  imagelarge={paintingData.images.gallery}
-                                 alt={paintingData.name}
-                                  onClose={closeModal}
-/>
-                                )}
-                              <div className="wrapper__title--artist">
-                               <h1 className="title text-2">{paintingData?.name}</h1>
-                               <h2 className="artist text-5">{paintingData?.artist?.name}</h2>
-                            </div>
-                            
-                            
-                       
-                 </div>
+     <section className="wrapper__content container">
+                      
+          
+                 <div className="image__item ">
+                    <div className="wrapper__image">
+                   
+                     <picture className="image__hero-wrapper">
+                         <source media="(max-width: 768px)" srcSet={paintingData?.images?.hero.small} />
+                          <source media="(min-width: 769px)" srcSet={paintingData?.images?.hero.large} />
+                             <img
+                            src={paintingData?.images?.hero.large || paintingData?.images?.hero.small}
+                             className="card__image"/>
+                     </picture>
+                  </div>
+               
+                       <button
+                        className="view-image-btn"
+                         onClick={openModal}
+                           >
+                         <img
+                          className="view-image-icon"
+                         src={viewimage}
+                         alt="A button to click on and see the image bigger"
+                         className="view-image-icon"
+                         />
+                         <span className="view-image-text text-5">VIEW IMAGE</span>
+                    </button>
+                                    
+                     {isModalOpen && (
+                         <ModalImage
+                          imagelarge={paintingData.images.gallery}
+                           alt={paintingData.name}
+                           onClose={closeModal} />
+                          )}
+                       <div className="wrapper__title--artist">
+                            <h1 className="title text-2">{paintingData?.name}</h1>
+                             <h2 className="artist text-5">{paintingData?.artist?.name}</h2>
+                       </div>
 
-                  
-                        
+                       <div className="thumbnail">
+                          <img src={paintingData?.artist?.image} className="image__description--thumbnail" alt="artist thumbnail" />
+                      </div>  
+                             
+</div>
+                      
+             
 
-                        <div className="description__text">
-                             <div className="thumbnail">
-                                <img src={paintingData?.artist?.image} className="image__description--thumbnail" alt="artist thumbnail" />
-                              </div>
-                              <h2 className="image__description--year text-1">{paintingData?.year}</h2>
-                     
-                        
-                          <p className="text">{paintingData?.description}</p>
-                        </div>
-                            </>
-                        ):(
-                            <h2>loading...</h2>
-                        )}
-
+                <div className="wrapper__description--source">
+                          
+                           <div className="description__text">
+                             <h2 className="image__description--year text-1">{paintingData?.year}</h2>
+                            <p className="text">{paintingData?.description}</p>
+                           </div>
                         
                         <a href={`${paintingData?.source}`} 
                                    className="button__source--link text-5"
@@ -146,8 +140,8 @@ const closeModal = () => {
                                    GO TO SOURCE
                         </a>
                    
-
-                </div>
+                  </div>
+        </section>
 
                      
             
