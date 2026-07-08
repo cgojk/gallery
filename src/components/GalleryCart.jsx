@@ -7,8 +7,7 @@ export default function GalleryCart(props){
      
       name,
         artist,
-        imagelarge,
-        imagesmall, 
+        image, 
         alt} = props;
     
     return (
@@ -19,10 +18,10 @@ export default function GalleryCart(props){
                <div className="images__gallery--item">
                    
                       <picture className="image-wrapper">
-                      <source media="(max-width: 768px)" srcSet={imagesmall} />
-                      <source media="(min-width: 769px)" srcSet={imagelarge} />
+                      {/* <source media="(max-width: 768px)" srcSet={imagesmall} />
+                      <source media="(min-width: 769px)" srcSet={imagelarge} /> */}
                   <img
-                      src={imagelarge || imagesmall}
+                      src={image}
                       alt={alt}
                       className="card__image"
     />

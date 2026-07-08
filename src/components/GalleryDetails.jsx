@@ -70,6 +70,7 @@ const closeModal = () => {
 }
 
     return (
+        <>
 
      
                      <motion.div className="gallery-page"
@@ -144,7 +145,7 @@ const closeModal = () => {
         </section>
 
                      
-            
+          </motion.div>  
                 
  <div className="wrapper__footer--gallery">
      <div className="footer__slide">
@@ -165,9 +166,9 @@ const closeModal = () => {
                         </div>
                   </div>
     </div>                
-</motion.div>
+
            
-        
+       </> 
         
     );
 }

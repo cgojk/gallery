@@ -25,9 +25,7 @@ body {
     cursor:pointer;
 }
 
-.navigation{
-   
-}
+
 
 .nav{
 display:flex;
@@ -51,13 +49,24 @@ align-items:center;
   
 
 }
-.gallery__images{
-    display:flex;
-    flex-direction:column;
-    gap:var(--space-24);
 
+/* ==============================================
+            GALLERY principal gallery
+   ==============================================*/
+
+.gallery__images{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:var(--space-24);
+     .text-2 {
+        font-size: 1.5rem;
+    }
+     .title {
+        font-size: 1.5rem;
+    }
 
 }
+
 
 .images__gallery--item{
     display:flex;
@@ -115,3 +124,4 @@ align-items:center;
     }
    
 }
+

@@ -46,6 +46,26 @@
 
 }
 
+
+
+
+
+.gallery__images {
+    display: block; 
+    column-count: 2;
+    column-gap: 2.5rem;
+}
+
+.links__description {
+    break-inside: avoid;
+    display: block;
+    margin-bottom: var(--space-24);
+}
+
+
+
+
+
 .wrapper__description--source{
 
     .image__description--year{
@@ -67,6 +87,15 @@
 }
     
 @media only screen and (min-width: 1200px) {
+
+
+    .gallery__images {
+    display: block; 
+    column-count: 3;
+    column-gap: 2.5rem;
+}
+
+
 .wrapper__content{
   
     display:grid;
