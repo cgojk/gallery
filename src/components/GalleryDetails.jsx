@@ -11,10 +11,10 @@ import ModalImage from './ModalImage';
 import { useState } from 'react';
 
 
-const arrowPrevious = ("/assets/shared/icon-back-button.svg");
-const viewimage = ("/assets/shared/icon-view-image.svg");
+const arrowPrevious = ("/public/assets/shared/icon-back-button.svg");
+const viewimage = ("/public/assets/shared/icon-view-image.svg");
 
-const arrowNext = ("/assets/shared/icon-next-button.svg");
+const arrowNext = ("/public/assets/shared/icon-next-button.svg");
 
 export default function GalleryDetails() {
 
@@ -70,10 +70,9 @@ const closeModal = () => {
 }
 
     return (
-        <>
-
+ <>
      
-                     <motion.div className="gallery-page"
+        <motion.div className="gallery-page"
                     initial={{ opacity: 0, x: 50  * direction }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 * direction }}
@@ -145,7 +144,7 @@ const closeModal = () => {
         </section>
 
                      
-          </motion.div>  
+      </motion.div>      
                 
  <div className="wrapper__footer--gallery">
      <div className="footer__slide">
@@ -167,8 +166,8 @@ const closeModal = () => {
                   </div>
     </div>                
 
-           
-       </> 
+     </>      
+        
         
     );
 }
