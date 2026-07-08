@@ -19,7 +19,7 @@ Users should be able to:
 ![alt text](image.png)
 
 - Solution URL: github.com/cgojk/gallery.
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: gallerycatalina.netlify.app
 
 ## My process
 
