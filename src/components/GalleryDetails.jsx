@@ -11,10 +11,10 @@ import ModalImage from './ModalImage';
 import { useState } from 'react';
 
 
-const arrowPrevious = ("/public/assets/shared/icon-back-button.svg");
-const viewimage = ("/public/assets/shared/icon-view-image.svg");
+const arrowPrevious = ("/assets/shared/icon-back-button.svg");
+const viewimage = ("/assets/shared/icon-view-image.svg");
 
-const arrowNext = ("/public/assets/shared/icon-next-button.svg");
+const arrowNext = ("/assets/shared/icon-next-button.svg");
 
 export default function GalleryDetails() {
 
