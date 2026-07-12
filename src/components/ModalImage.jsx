@@ -12,7 +12,7 @@ export default function ModalImage({ imagelarge, alt, onClose }) {
             </div>
 			
         <picture className="image-wrapper">
-            <img src={imagelarge} alt={alt} />
+            <img className="image__insidemodal"src={imagelarge} alt={alt} />
         </picture>
     </div>
     </div>
